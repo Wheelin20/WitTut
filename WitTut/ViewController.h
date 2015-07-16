@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Wit/Wit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <WitDelegate>
 
+-(void)changeBackgroundColor:(NSString*)colorTxt;
 
 @end
 

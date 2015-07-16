@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Wit/Wit.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    
+    [Wit sharedInstance].accessToken = @"GKK7L6ZI5CV5KD4FZNI3PWBXKJGVSESY";
+    [Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
+    
     return YES;
 }
 
